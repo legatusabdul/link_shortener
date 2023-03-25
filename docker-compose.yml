@@ -1,0 +1,29 @@
+version: "3.3"
+services:
+  db:
+    image: postgres
+    container_name: local_link_shorter_pgdb
+    restart: always
+    ports:
+      - "54320:5432"
+    environment:
+      POSTGRES_USER: user
+      POSTGRES_PASSWORD: admin
+    volumes:
+      - local_pgdata:/var/lib/postgresql/data
+  pgadmin:
+    image: dpage/pgadmin4
+    container_name: pgadmin4__link_shorter_container
+    restart: always
+    ports:
+      - "5050:80"
+    environment:
+      PGADMIN_DEFAULT_EMAIL: your_email@gmail.com
+      PGADMIN_DEFAULT_PASSWORD: ChernayaMast#1111
+    volumes:
+      - pgadmin-data:/var/lib/pgadmin
+
+volumes:
+  local_pgdata:
+  pgadmin-data:
+  

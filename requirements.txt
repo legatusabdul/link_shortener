@@ -1,0 +1,7 @@
+Flask
+Flask-CORS
+flask-sqlalchemy
+flask-restful
+flask-restful-swagger
+pyjwt
+psycopg2-binary
